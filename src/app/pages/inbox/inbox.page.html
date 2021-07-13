@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inbox</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let m of emails">
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <div>From: {{m.from}}</div>
+        </ion-col>
+        <ion-col size="12">
+          <div>Message: {{(m.content.length>50) ? (m.content | slice:0:120) + "..." : (m.content)}}</div>
+        </ion-col>
+        <ion-col size="8">
+          <div>Date: {{m.date}}</div>
+        </ion-col>
+      </ion-row>
+
+      <ion-button slot="end">Delete</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
